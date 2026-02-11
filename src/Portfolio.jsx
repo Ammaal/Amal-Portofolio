@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { 
-  Menu, 
-  X, 
-  Linkedin, 
-  Mail, 
-  MapPin, 
-  ExternalLink, 
-  ChevronRight, 
-  Code, 
-  Layout, 
+import {
+  Menu,
+  X,
+  Linkedin,
+  Mail,
+  MapPin,
+  ExternalLink,
+  ChevronRight,
+  Code,
+  Layout,
   Trophy,
   Briefcase,
   GraduationCap,
@@ -17,6 +17,16 @@ import {
   Image as ImageIcon,
   Play
 } from 'lucide-react';
+
+import faceImg from './image/face.png';
+import virtualCampusImg from './image/virtual_campus.png';
+import concertEventImg from './image/concert_event.png';
+import ecobloxImg from './image/ecoblox.png';
+import purdGoesToSchoolImg from './image/purd_goes_to_school.png';
+import hackathonTeamImg from './image/hackathon_team.png';
+import virtualConcertImg from './image/virtual_concert.png';
+import teamPlanningImg from './image/team_planning.png';
+
 
 const Portfolio = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -47,7 +57,7 @@ const Portfolio = () => {
 
   return (
     <div className="min-h-screen bg-zinc-950 text-zinc-300 selection:bg-indigo-500 selection:text-white font-sans">
-      
+
       {/* Navigation */}
       <nav className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-zinc-950/80 backdrop-blur-md border-b border-zinc-800 py-4' : 'bg-transparent py-6'}`}>
         <div className="max-w-6xl mx-auto px-6 flex justify-between items-center">
@@ -74,7 +84,7 @@ const Portfolio = () => {
         {/* Mobile Nav */}
         <AnimatePresence>
           {isMobileMenuOpen && (
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
@@ -82,9 +92,9 @@ const Portfolio = () => {
             >
               <div className="flex flex-col p-6 gap-4">
                 {navLinks.map((link) => (
-                  <a 
-                    key={link.name} 
-                    href={link.href} 
+                  <a
+                    key={link.name}
+                    href={link.href}
                     onClick={() => setIsMobileMenuOpen(false)}
                     className="text-lg font-medium text-white hover:text-indigo-400"
                   >
@@ -100,9 +110,9 @@ const Portfolio = () => {
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 px-6 overflow-hidden">
         <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
-          
+
           {/* Left Column: Text */}
-          <motion.div 
+          <motion.div
             initial="hidden"
             animate="visible"
             variants={variants}
@@ -115,14 +125,14 @@ const Portfolio = () => {
               </span>
               Available for new projects
             </div>
-            
+
             <h1 className="text-5xl md:text-7xl font-bold text-white tracking-tight leading-tight">
-              Bridging Virtual Worlds <br />
-              <span className="text-zinc-500">& Real Solutions.</span>
+              Connecting Virtual Innovation <br />
+              <span className="text-zinc-500">with Real-World Impact</span>
             </h1>
-            
+
             <p className="text-lg text-zinc-400 max-w-xl leading-relaxed">
-              I am an Information Systems undergraduate and Project Manager specializing in Roblox-based virtual platforms. 
+              I am an Information Systems undergraduate and Project Manager specializing in Roblox-based virtual platforms.
               I lead cross-functional teams to deliver structured digital solutions.
             </p>
 
@@ -146,24 +156,24 @@ const Portfolio = () => {
           </motion.div>
 
           {/* Right Column: Profile Image / Face */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8 }}
             className="relative flex justify-center lg:justify-end z-10"
           >
-             {/* Decorative Background Elements */}
+            {/* Decorative Background Elements */}
             <div className="absolute inset-0 bg-gradient-to-tr from-indigo-500/20 to-blue-500/20 blur-3xl rounded-full transform rotate-12" />
-            
+
             {/* Image Container */}
             <div className="relative w-72 h-72 md:w-96 md:h-96 rounded-2xl overflow-hidden border border-zinc-800 shadow-2xl bg-zinc-900 group">
               {/* PLACEHOLDER: Replace src with your actual photo URL */}
-              <img 
-                src="https://api.dicebear.com/9.x/avataaars/svg?seed=Ahmad&backgroundColor=b6e3f4" 
-                alt="Ahmad Maula" 
+              <img
+                src={faceImg}
+                alt="Ahmad Maula"
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
               />
-              
+
               {/* Overlay Badge */}
               <div className="absolute bottom-4 left-4 right-4 bg-zinc-950/80 backdrop-blur-sm p-3 rounded-lg border border-zinc-800 flex items-center gap-3">
                 <div className="h-2 w-2 bg-green-500 rounded-full animate-pulse"></div>
@@ -175,7 +185,7 @@ const Portfolio = () => {
             </div>
           </motion.div>
         </div>
-        
+
         {/* Background Decorative Gradient */}
         <div className="absolute top-0 right-0 -z-10 w-1/2 h-1/2 bg-indigo-600/10 blur-[120px] rounded-full pointer-events-none" />
         <div className="absolute bottom-0 left-0 -z-10 w-1/3 h-1/3 bg-blue-600/5 blur-[100px] rounded-full pointer-events-none" />
@@ -184,7 +194,7 @@ const Portfolio = () => {
       {/* About & Education Grid */}
       <section id="about" className="py-20 px-6 bg-zinc-900/50">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -197,24 +207,24 @@ const Portfolio = () => {
             <p className="text-zinc-400 leading-relaxed">
               My expertise lies in blending technical skills (Python, React, ERP) with managerial acumen (Agile, Project Planning). I have a proven track record of managing end-to-end operations for hackathons, leadership programs, and large-scale virtual events.
             </p>
-            
+
             <div className="flex items-center gap-2 text-zinc-300">
               <MapPin size={18} className="text-indigo-400" />
               <span>Cikarang, Indonesia</span>
             </div>
           </motion.div>
 
-          <motion.div 
-             initial={{ opacity: 0, x: 20 }}
-             whileInView={{ opacity: 1, x: 0 }}
-             viewport={{ once: true }}
-             className="bg-zinc-900 p-8 rounded-2xl border border-zinc-800"
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="bg-zinc-900 p-8 rounded-2xl border border-zinc-800"
           >
             <div className="flex items-center gap-3 mb-6">
               <GraduationCap className="text-indigo-400" size={28} />
               <h3 className="text-xl font-semibold text-white">Education</h3>
             </div>
-            
+
             <div className="space-y-4">
               <div>
                 <h4 className="text-lg text-white font-medium">President University</h4>
@@ -224,7 +234,7 @@ const Portfolio = () => {
                   <span className="text-zinc-500 text-sm">2024 - Present</span>
                 </div>
               </div>
-              
+
               <div className="border-t border-zinc-800 pt-4">
                 <p className="text-sm font-medium text-white mb-2">Key Coursework</p>
                 <p className="text-xs text-zinc-400 leading-relaxed">
@@ -232,7 +242,7 @@ const Portfolio = () => {
                 </p>
               </div>
 
-               <div className="border-t border-zinc-800 pt-4">
+              <div className="border-t border-zinc-800 pt-4">
                 <p className="text-sm font-medium text-white mb-2 flex items-center gap-2">
                   <Trophy size={14} className="text-yellow-500" /> Jababeka Scholarship Awardee
                 </p>
@@ -255,7 +265,7 @@ const Portfolio = () => {
 
           <div className="space-y-12">
             {/* Job 1 */}
-            <ExperienceCard 
+            <ExperienceCard
               company="OnBlox Studio"
               role="Project Manager | Co-Founder"
               period="Jul 2025 - Present"
@@ -266,12 +276,24 @@ const Portfolio = () => {
                 "Contributed directly to building and design (~30%) alongside QA standards."
               ]}
             />
-            
+
+            <ExperienceCard
+              company="President University Roblox Developer"
+              role="Founder & Chairperson"
+              period="Oct 2025 - Present"
+              description="Established a growth-oriented Roblox developer community that transforms gaming into a platform for learning, innovation, and meaningful impact."
+              achievements={[
+                "Founded and lead a student developer community focused on building Roblox experiences and fostering collaboration.",
+                "Organized educational programs, skill-building workshops, and social initiatives for campus and public engagement.",
+                "Empowered members to develop technical, creative, and teamwork skills through real-world project execution."
+              ]}
+            />
+
             {/* Job 2 */}
-            <ExperienceCard 
+            <ExperienceCard
               company="PUMA Information Systems"
               role="Project Manager (Hackathon)"
-              period="Aug 2024 - Present"
+              period="Jan 2025 - May 2025"
               description="Led planning and execution of an international student hackathon co-hosted by President University & UNITAR International University (Malaysia)."
               achievements={[
                 "Managed logistics and cross-department coordination for a 3-day hybrid event (25+ participants).",
@@ -280,10 +302,10 @@ const Portfolio = () => {
             />
 
             {/* Job 3 */}
-            <ExperienceCard 
+            <ExperienceCard
               company="President University Investment Club"
               role="Project Manager (Leadership Program)"
-              period="Jan 2025 - May 2025"
+              period="Nov 2024 - Jan 2025"
               description="Spearheaded a leadership development workshop focused on communication and team effectiveness."
               achievements={[
                 "Managed end-to-end operations including agenda design, speaker coordination, and internal team collaboration."
@@ -302,29 +324,37 @@ const Portfolio = () => {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <ProjectCard 
+            <ProjectCard
               title="Virtual Campus"
               category="Roblox Simulation"
               description="An immersive digital twin of President University. Beta launch achieved 2k+ visits in week one."
               tags={['Roblox Studio', 'Project Management', 'Education']}
               icon={<MapPin size={20} />}
-              imgUrl="https://placehold.co/600x400/222/555?text=Virtual+Campus"
+              imgUrl={virtualCampusImg}
             />
-            <ProjectCard 
+            <ProjectCard
               title="Ahquote Land Concert"
               category="Virtual Event"
               description="Hosted IDGITAF & Dannila virtual concert. Achieved 1M+ engagements across TikTok, Instagram, and Roblox."
               tags={['Event Management', 'Social Media', '3D Design']}
               icon={<Gamepad2 size={20} />}
-              imgUrl="https://placehold.co/600x400/333/666?text=Concert+Event"
+              imgUrl={concertEventImg}
             />
-            <ProjectCard 
+            <ProjectCard
               title="EcoBlox Social Project"
               category="Educational Game"
               description="Waste management game for high school students. Aligned digital delivery with social impact objectives."
               tags={['Gamification', 'Sustainability', 'Team Lead']}
               icon={<Code size={20} />}
-              imgUrl="https://placehold.co/600x400/111/444?text=EcoBlox"
+              imgUrl={ecobloxImg}
+            />
+            <ProjectCard
+              title="PURD Goes to School"
+              category="Educational Roblox Event"
+              description="A hands-on educational program introducing high school students to the Roblox development ecosystem, empowering them with foundational skills in game development, digital creativity, collaboration, and problem-solving."
+              tags={['Education', 'High School', 'Seminar']}
+              icon={<GraduationCap size={20} />}
+              imgUrl={purdGoesToSchoolImg}
             />
           </div>
         </div>
@@ -342,12 +372,12 @@ const Portfolio = () => {
 
           <div className="grid md:grid-cols-3 gap-4 auto-rows-[200px]">
             {/* Gallery Item 1 (Large) */}
-            <motion.div 
+            <motion.div
               whileHover={{ scale: 1.02 }}
               className="md:col-span-2 md:row-span-2 relative rounded-2xl overflow-hidden group bg-zinc-900 border border-zinc-800"
             >
               {/* PLACEHOLDER: Replace with Hackathon Photo */}
-              <img src="https://placehold.co/800x600/1e1e24/indigo?text=Hackathon+Team" alt="Hackathon" className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity" />
+              <img src={hackathonTeamImg} alt="Hackathon" className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity" />
               <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent opacity-80"></div>
               <div className="absolute bottom-4 left-4">
                 <span className="text-xs font-bold text-indigo-400 bg-zinc-900/80 px-2 py-1 rounded mb-2 inline-block">Event</span>
@@ -356,43 +386,43 @@ const Portfolio = () => {
             </motion.div>
 
             {/* Gallery Item 2 */}
-            <motion.div 
+            <motion.div
               whileHover={{ scale: 1.02 }}
               className="relative rounded-2xl overflow-hidden group bg-zinc-900 border border-zinc-800"
             >
-               {/* PLACEHOLDER: Replace with Concert Video Thumbnail */}
-              <img src="https://placehold.co/400x400/1e1e24/violet?text=Virtual+Concert" alt="Concert" className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity" />
+              {/* PLACEHOLDER: Replace with Concert Video Thumbnail */}
+              <img src={virtualConcertImg} alt="Concert" className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity" />
               <div className="absolute inset-0 flex items-center justify-center bg-black/30 group-hover:bg-black/10 transition-colors">
                 <div className="h-10 w-10 bg-white/20 backdrop-blur rounded-full flex items-center justify-center">
                   <Play size={16} className="text-white fill-white ml-1" />
                 </div>
               </div>
               <div className="absolute bottom-3 left-3">
-                 <p className="text-sm font-medium text-white">Virtual Concert Demo</p>
+                <p className="text-sm font-medium text-white">Virtual Concert Demo</p>
               </div>
             </motion.div>
 
             {/* Gallery Item 3 */}
-            <motion.div 
-               whileHover={{ scale: 1.02 }}
-               className="relative rounded-2xl overflow-hidden group bg-zinc-900 border border-zinc-800"
+            <motion.div
+              whileHover={{ scale: 1.02 }}
+              className="relative rounded-2xl overflow-hidden group bg-zinc-900 border border-zinc-800"
             >
-               {/* PLACEHOLDER: Replace with another photo */}
-               <img src="https://placehold.co/400x400/1e1e24/green?text=Team+Planning" alt="Meeting" className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity" />
-                <div className="absolute bottom-3 left-3">
-                 <p className="text-sm font-medium text-white">Team Planning</p>
+              {/* PLACEHOLDER: Replace with another photo */}
+              <img src={teamPlanningImg} alt="Meeting" className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity" />
+              <div className="absolute bottom-3 left-3">
+                <p className="text-sm font-medium text-white">PresUniv Roblox Developer</p>
               </div>
             </motion.div>
 
-             {/* Gallery Item 4 */}
-            <motion.div 
-               whileHover={{ scale: 1.02 }}
-               className="md:col-span-1 relative rounded-2xl overflow-hidden group bg-zinc-900 border border-zinc-800"
+            {/* Gallery Item 4 */}
+            <motion.div
+              whileHover={{ scale: 1.02 }}
+              className="md:col-span-1 relative rounded-2xl overflow-hidden group bg-zinc-900 border border-zinc-800"
             >
-               <div className="w-full h-full flex flex-col items-center justify-center p-6 text-center bg-zinc-900">
-                  <ImageIcon size={32} className="text-zinc-600 mb-2 group-hover:text-indigo-400 transition-colors" />
-                  <p className="text-sm text-zinc-500">More moments <br/>coming soon...</p>
-               </div>
+              <div className="w-full h-full flex flex-col items-center justify-center p-6 text-center bg-zinc-900">
+                <ImageIcon size={32} className="text-zinc-600 mb-2 group-hover:text-indigo-400 transition-colors" />
+                <p className="text-sm text-zinc-500">More moments <br />coming soon...</p>
+              </div>
             </motion.div>
           </div>
         </div>
@@ -407,17 +437,17 @@ const Portfolio = () => {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            <SkillColumn 
+            <SkillColumn
               icon={<Briefcase className="text-indigo-400" />}
               title="Management"
               skills={['Project Planning & Execution', 'Agile/Sprint Management', 'Stakeholder Coordination', 'Quality Assurance (QA)', 'System & Process Thinking']}
             />
-            <SkillColumn 
+            <SkillColumn
               icon={<Code className="text-indigo-400" />}
               title="Technical"
               skills={['React JS', 'Python', 'Google AI Studio', 'n8n Automation', 'EPICOR ERP Software']}
             />
-            <SkillColumn 
+            <SkillColumn
               icon={<Layout className="text-indigo-400" />}
               title="Tools"
               skills={['Roblox Studio', 'Notion', 'Microsoft Excel/Spreadsheet', 'Microsoft Word', 'Figma (Design Basics)']}
@@ -433,16 +463,16 @@ const Portfolio = () => {
           <p className="text-zinc-400 mb-10 text-lg">
             I'm currently open to opportunities in Product Management, Project Management, and Digital Development.
           </p>
-          
+
           <div className="flex flex-col md:flex-row justify-center gap-6">
-            <a 
+            <a
               href="mailto:ahmadmaula2006@gmail.com"
               className="flex items-center justify-center gap-3 px-8 py-4 bg-indigo-600 text-white rounded-xl hover:bg-indigo-700 transition-all font-medium"
             >
               <Mail size={20} />
               ahmadmaula2006@gmail.com
             </a>
-            <a 
+            <a
               href="https://linkedin.com/in/ahmad-maula-shibghotulloh-447190312"
               target="_blank"
               rel="noopener noreferrer"
@@ -466,7 +496,7 @@ const Portfolio = () => {
 /* Sub-Components */
 
 const ExperienceCard = ({ company, role, period, description, achievements }) => (
-  <motion.div 
+  <motion.div
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
@@ -498,35 +528,35 @@ const ExperienceCard = ({ company, role, period, description, achievements }) =>
 );
 
 const ProjectCard = ({ title, category, description, tags, icon, imgUrl }) => (
-  <motion.div 
+  <motion.div
     whileHover={{ y: -5 }}
     className="bg-zinc-950 border border-zinc-800 rounded-2xl overflow-hidden hover:border-indigo-500/50 transition-colors group flex flex-col h-full"
   >
     {/* Project Image */}
     <div className="h-48 w-full bg-zinc-900 relative overflow-hidden">
-        <img src={imgUrl} alt={title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-        <div className="absolute top-4 right-4 p-2 bg-zinc-950/80 backdrop-blur rounded-lg text-indigo-400 border border-zinc-800">
-            {icon}
-        </div>
+      <img src={imgUrl} alt={title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+      <div className="absolute top-4 right-4 p-2 bg-zinc-950/80 backdrop-blur rounded-lg text-indigo-400 border border-zinc-800">
+        {icon}
+      </div>
     </div>
 
     <div className="p-6 flex flex-col flex-grow">
-        <div className="flex justify-between items-start mb-2">
-            <h3 className="text-lg font-bold text-white">{title}</h3>
-            <ExternalLink size={16} className="text-zinc-600 group-hover:text-indigo-400 transition-colors mt-1" />
-        </div>
-        
-        <p className="text-xs text-indigo-400 font-medium mb-3 uppercase tracking-wide">{category}</p>
-        <p className="text-zinc-400 text-sm mb-6 leading-relaxed flex-grow">
+      <div className="flex justify-between items-start mb-2">
+        <h3 className="text-lg font-bold text-white">{title}</h3>
+        <ExternalLink size={16} className="text-zinc-600 group-hover:text-indigo-400 transition-colors mt-1" />
+      </div>
+
+      <p className="text-xs text-indigo-400 font-medium mb-3 uppercase tracking-wide">{category}</p>
+      <p className="text-zinc-400 text-sm mb-6 leading-relaxed flex-grow">
         {description}
-        </p>
-        <div className="flex flex-wrap gap-2 mt-auto">
+      </p>
+      <div className="flex flex-wrap gap-2 mt-auto">
         {tags.map(tag => (
-            <span key={tag} className="text-xs px-2 py-1 bg-zinc-900 border border-zinc-800 rounded text-zinc-400">
+          <span key={tag} className="text-xs px-2 py-1 bg-zinc-900 border border-zinc-800 rounded text-zinc-400">
             {tag}
-            </span>
+          </span>
         ))}
-        </div>
+      </div>
     </div>
   </motion.div>
 );
